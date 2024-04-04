@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: GatewayAPI
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: AccountManagement
+          uri: http://localhost:8081
+          predicates:
+            - Path=/auth/**
+        - id: todolist
+          uri: http://localhost:5555
+          predicates:
+            - Path=//todolist/**
+        - id:
+
+
+server:
+  port=8222
+
+eureka:
+  client:
+    register-with-eureka: false

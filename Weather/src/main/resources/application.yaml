@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Weather
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://aws-0-us-east-1.pooler.supabase.com:5432/postgres?user=postgres.lppdyfrupbswkquqtgim&password=FU963!omsd@5061K
+    username: postgres.lppdyfrupbswkquqtgim
+    password: FU963!omsd@5061K
+
+server:
+  port: 8891
+
+
+open-weather-APIkey: fbce1f76a7ec89f8b52995031b007223
+
+
