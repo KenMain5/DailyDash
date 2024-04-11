@@ -11,16 +11,15 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/auth/**
-        - id: todolist
-          uri: http://localhost:5555
+        - id: Weather
+          uri: http://localhost:8891
           predicates:
-            - Path=//todolist/**
-        - id:
-
-
+            - Path=/weather/**
 server:
-  port=8222
+  port: 8222
 
 eureka:
   client:
     register-with-eureka: false
+
+debug: true

@@ -31,8 +31,13 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())
+//                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+
+
                 //csrfFilter to protect against CSRF attacks
-                .csrf(Customizer.withDefaults())
+                //.csrf(Customizer.withDefaults())
+
 
                 //create exception handling from trying to access protected resources
                 .exceptionHandling(httpSecurityExceptionHandlingConfigurer -> httpSecurityExceptionHandlingConfigurer
@@ -42,12 +47,11 @@ public class SecurityConfig {
                 //Will check securityContextHolder if it has authorization..
                 .authorizeHttpRequests(auth -> {
 
-                    auth.requestMatchers("/login").permitAll();
+                    auth.requestMatchers("auth/login", "auth/register").permitAll();
                     auth.requestMatchers("/").hasAnyRole("ADMIN");
                     auth.requestMatchers("/").authenticated();
                     auth.anyRequest().authenticated();
                 })
-
 
                 //stateless authentication, no session
                 .sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer
@@ -55,7 +59,6 @@ public class SecurityConfig {
 
                 .httpBasic(httpSecurityHttpBasicConfigurer -> {})
                 //jwtAuthenticationFilter()
-
 
                 //.formlogin
                 .formLogin(Customizer.withDefaults());

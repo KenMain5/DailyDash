@@ -20,10 +20,4 @@ public class City {
 
     @OneToOne(mappedBy = "city")
     private Weather weather;
-
-    public City(){
-
-    }
-
-
 }

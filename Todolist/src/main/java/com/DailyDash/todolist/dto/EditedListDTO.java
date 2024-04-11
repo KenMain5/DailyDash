@@ -1,7 +1,6 @@
-package com.DailyDash.todolist.dto;
+package com.DailyDash.Todolist.dto;
 
-import com.DailyDash.todolist.entity.DashUser;
-import com.DailyDash.todolist.entity.Task;
+import com.DailyDash.Todolist.entity.Task;
 import lombok.Data;
 
 import java.util.List;
@@ -10,5 +9,5 @@ import java.util.List;
 public class EditedListDTO {
     private String title;
     private List<Task> tasks;
-    private DashUser user;
+    private String username;
 }

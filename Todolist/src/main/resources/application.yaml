@@ -1,16 +1,12 @@
 spring:
   application:
-    name: todolist
+    name: Todolist
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://aws-0-us-east-1.pooler.supabase.com:5432/postgres?
-    user: postgres.omfdfdallvoeasibotqu&password=mHEUfrcTOtMKCxUr
-    username: postgres.omfdfdallvoeasibotqu
-    password: mHEUfrcTOtMKCxUr
+    url: jdbc:postgresql://aws-0-us-east-1.pooler.supabase.com:5432/postgres?user=postgres.wfkgbnwcykinpyqbkjih&password=FU963!omsd@5061K
+    username: postgres.wfkgbnwcykinpyqbkjih
+    password: FU963!omsd@5061K
 
 server:
   port: 5555
-
-
-

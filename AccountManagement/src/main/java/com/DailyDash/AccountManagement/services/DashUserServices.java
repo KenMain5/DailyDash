@@ -9,6 +9,7 @@ import com.DailyDash.AccountManagement.repository.DashUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -20,12 +21,14 @@ public class DashUserServices {
     private final DashUserRepository dashUserRepository;
     private final CityRepository cityRepository;
     private final CityServices cityServices;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public DashUserServices(DashUserRepository dashUserRepository, CityServices cityServices, CityRepository cityRepository){
+    public DashUserServices(DashUserRepository dashUserRepository, CityServices cityServices, CityRepository cityRepository, PasswordEncoder passwordEncoder){
         this.dashUserRepository = dashUserRepository;
         this.cityServices = cityServices;
         this.cityRepository = cityRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public DashUser convertToDasher(RegisterDTO registerDTO, City city){
@@ -38,15 +41,25 @@ public class DashUserServices {
         return tempDashUser;
     }
 
-    public boolean verifyUser(LoginDTO loginDTO){
-        Optional<DashUser> optionalDashUser= dashUserRepository.findDashUserByEmailAndPassword(loginDTO.getEmail(), loginDTO.getPassword());
+    //Method for when the user logs in
+    public boolean verifyUser(LoginDTO loginDTO) {
+        Optional<DashUser> optionalDashUser = dashUserRepository.findDashUserByEmail(loginDTO.getEmail());
         if (optionalDashUser.isPresent()) {
-            return true;
+            DashUser user = optionalDashUser.get();
+            if (passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) {
+                logger.info("User verified: {}", loginDTO.getEmail());
+                return true;
+            } else {
+                logger.info("Incorrect password for user: {}", loginDTO.getEmail());
+                return false;
+            }
         } else {
+            logger.info("User not found: {}", loginDTO.getEmail());
             return false;
         }
     }
 
+    //Method for deleting the user
     public void deleteUser(Long id){
         Optional<DashUser> optionalDashUser = dashUserRepository.findById(id);
         if (optionalDashUser.isPresent()) {

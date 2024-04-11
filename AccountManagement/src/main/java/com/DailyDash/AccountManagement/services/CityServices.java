@@ -1,5 +1,6 @@
 package com.DailyDash.AccountManagement.services;
 import com.DailyDash.AccountManagement.entity.City;
+import com.DailyDash.AccountManagement.exceptions.CityNotFoundException;
 import com.DailyDash.AccountManagement.repository.CityRepository;
 import com.opencsv.bean.CsvToBeanBuilder;
 import org.slf4j.Logger;
@@ -26,11 +27,18 @@ public class CityServices {
     }
 
     //Function only adds the City to the database if there isn't already an existing version
-    public City addCity(String cityName){
-        Optional<City> optionalCity = cityRepository.findCityByCityName(cityName);
+    public City addCity(String cityName) throws CityNotFoundException{
+        logger.info("about to begin adding the city");
+        Optional<City> optionalCity = this.findCityInfo(cityName);
+
+        //City is not in the database yet, and there is a city, it will be added
         if (!this.doesCityExistsInDB(cityName) && optionalCity.isPresent()) {
-            cityRepository.save(optionalCity.get());
-        } return optionalCity.get();
+            return cityRepository.save(optionalCity.get());
+        } else if (this.doesCityExistsInDB(cityName)) {
+            return cityRepository.findCityByCityName(cityName);
+        } else {
+            throw new CityNotFoundException("City not found" + cityName);
+        }
     }
 
 
@@ -61,4 +69,6 @@ public class CityServices {
     public Boolean doesCityExistsInDB(String cityName){
         return cityRepository.existsByCityName(cityName);
     }
+
+
 }

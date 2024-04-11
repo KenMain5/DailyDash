@@ -26,7 +26,6 @@ public class DashUser {
 
     private String password;
 
-    @Nullable
     private Boolean isAccountVerified;
 
     @ManyToOne

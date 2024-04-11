@@ -1,8 +1,7 @@
-package com.DailyDash.todolist.service;
+package com.DailyDash.Todolist.service;
 
-
-import com.DailyDash.todolist.dto.EditedListDTO;
-import com.DailyDash.todolist.entity.Todolist;
+import com.DailyDash.Todolist.dto.EditedListDTO;
+import com.DailyDash.Todolist.entity.Todolist;
 
 public interface TodolistService {
     public Todolist getList(String username);
