@@ -16,17 +16,11 @@ public class RegistrationValidation implements Validator {
         return RegisterDTO.class.equals(clazz);
     }
 
-
-
     @Override
     public void validate(Object target, Errors errors) {
         ValidationUtils.rejectIfEmpty(errors, "username","username.empty","the username is empty");
         ValidationUtils.rejectIfEmpty(errors, "password","password.empty","the password is empty");
         ValidationUtils.rejectIfEmpty(errors, "cityName","cityName.empty","the cityName is empty");
         ValidationUtils.rejectIfEmpty(errors, "email","email.empty","the email is empty");
-
-
-
-
     }
 }

@@ -27,18 +27,14 @@ public class CityServices {
     }
 
     //Function only adds the City to the database if there isn't already an existing version
-    public City addCity(String cityName) throws CityNotFoundException{
+    public Optional<City> addCity(String cityName){
         logger.info("about to begin adding the city");
         Optional<City> optionalCity = this.findCityInfo(cityName);
 
         //City is not in the database yet, and there is a city, it will be added
         if (!this.doesCityExistsInDB(cityName) && optionalCity.isPresent()) {
-            return cityRepository.save(optionalCity.get());
-        } else if (this.doesCityExistsInDB(cityName)) {
-            return cityRepository.findCityByCityName(cityName);
-        } else {
-            throw new CityNotFoundException("City not found" + cityName);
-        }
+            optionalCity =  Optional.of(cityRepository.save(optionalCity.get()));
+        } return optionalCity;
     }
 
 
