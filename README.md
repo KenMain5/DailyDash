@@ -31,8 +31,19 @@ DailyDash is an all-in-One Daily Planner which would have the features users wou
 <h2>Features</h2>
 <div>
   <ul>
-    <li><strong>Weather:</strong> The application will check the weather to start your day and updates hourly </li>
-    <li><strong>User Sign In:</strong> The application includes functionality for users to sign in. </li>  </ul>
+    <li>
+	<strong>Login and Authentication:</strong> The application provides a secure login mechanism. Upon successful authentication, the user is provided a Jason Web Token which ensures a secure access to the applications features
+    </li>
+    <li>
+	<strong>Microservice Architecture</strong> The application is built using a microservice architecture, enabling scalable and flexible interactions across different applications.  
+    </li>  
+    <li>
+	<strong>Weather Updates</strong> The application offers real time weather updates that refresh periodically, providering users with the latest weather information to start their day or plan their activities
+    </li>  
+    <li>
+	<strong>To-Do List</strong> The application includes a to-do list feature, allowing  users to manage their task effectively. Users can add, edit or delete tasks as needed, helping them stay organized. 
+    </li>  
+  </ul>
 </div>
 
 
