@@ -31,6 +31,4 @@ public class TodolistController {
         todolistService.editList(editedListDTO);
         return new ResponseEntity<>("The Todolist has been saved successfully", HttpStatus.CREATED);
     }
-
-
 }
