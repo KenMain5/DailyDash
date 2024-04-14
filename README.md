@@ -1,8 +1,3 @@
-This is my main project.. 
-Each microservice application will have their own readme to prevent..
-To be continued.. 
-
-
 <h1 align='center'>
   DailyDash 
 </h1>
@@ -47,29 +42,6 @@ DailyDash is an all-in-One Daily Planner which would have the features users wou
 </div>
 
 
-
-# Endpoints
-<details>
-  <summary>GET /</summary>
-  <br>
-  <div>
-	This is the endpoint that the client request gets sent to when initially access the website. The RestController will receive this client request and 
-    at the moment will just send the daily weather information that we receive from the external API "https://openweathermap.org/". 
-      - Planning to create a function that would only send back the necessary information, as well as a way to save this to the database.
-      - Hourly checks so that it gets updated 
-  </div>
-  <br>
-</details>
-
-
 # Takeaway (Things I've Learned)
-This is one of the projects I'm planning to put a lot of efforts on. I believe this is something I can use on my daily life and this would provide me a 
-more thorough understanding of Java/Spring Framework. 
-  
-How to implement the MVC Design Pattern
-	-Intestesting problem I've encountered and learned from was that my frontend kept receiving a 401 error when attempting to register a user. The problem came 		from the DTO property names are not matching up with the properties being sent via JSON. I initally thought that as long as they are in the same order, the 		@RequestBody annotation would automatically handle it. 
-  
-How to connect to a deployed Postgres database and send data. 
-    
-How to do an external API call via WebClient 
+I gained a better understanding of how everything interacts in a microservice architecture application. I've also learned a lot about JWT and authentication protocols. 
 
