@@ -16,19 +16,19 @@ DailyDash is an all-in-One Daily Planner which would have the features users wou
 <img src="https://github.com/KenMain5/DailyDash/blob/main/githubResources/projectArchitecture.png?raw=true" height="400"> 
 </div>
 
-<h2>Flow</h2>
-The first thing that happens is the client sends an HTTP request to the server
-The API Gateway intercepts this HTTP Request and interacts with the Identity Provider to authenticate the user
-The Identity provider will authenticate the user and give a JWT token
-The user can now use the services inside the application
-They will then be re-directed to the main page where the main page will interact with each microservice 
-
-
+<h2>Application Flow</h2>
+<div>
+  <ul>
+    <li>The process starts when the client sends an HTTP request to the server.</li>
+    <li>The API Gateway intercepts this HTTP Request. It then communicates with the Identity Provider to authenticate the user</li>
+    <li>Upon successful completion, the Identity Provider issues a JWT token to the user</li>
+    <li>After authentication, the user is redirected to the main page. </li>
+    <li>This main page acts as a dashboard interacting witht various microserivces</li>
+</div>
 
 
 
 <h2>Features</h2>
-
 <div>
   <ul>
     <li><strong>Weather:</strong> The application will check the weather to start your day and updates hourly </li>
