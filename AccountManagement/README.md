@@ -5,7 +5,7 @@
 
 <h2>Description</h2>
 <p>
-  This is the Daily Dash Login Service that provides the user with authentication, role management, and access control functionalities. It is designed to securely manage user identities and facilitate seamless access to various components of the Daily Dash ecosystem. By leveraging robust security protocols and modern authentication mechanisms, this service ensures that user credentials are handled safely and that access is granted according to predefined roles and permissions.
+  This is the Daily Dash Login Service that provides the user with authentication, role management, and access control functionalities. It is designed to securely manage user identities and facilitate seamless access to various components of the Daily Dash ecosystem. By leveraging robust security protocols and modern authentication mechanisms, this service ensures that user credentials are handled safely and that access is granted according to predefined roles and permissions. Please refer to the parent component DailyDash to access and read all other components.
 </p>
 
 
