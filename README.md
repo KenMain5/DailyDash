@@ -13,8 +13,18 @@ To be continued..
 DailyDash is an all-in-One Daily Planner which would have the features users would need to start the day. Currently, this application would focus more on the backend to learn and improve my Java programming skills and show minimal React application skills. To see more of my frontend development skills, please see my other projects. This main README.md will feature the main architecture as a whole while if you click on the micro-services, you would see the details inside them. 
 
 <div align='center'>
-	<img src="https://github.com/KenMain5/DashHub/blob/6f22d864f903cf7c693e5308f4ef689fb91a505b/server/dailydash/src/main/resources/githubReadMe/InitialApplicationLogic.png" height="400"> 
+<img src="https://github.com/KenMain5/DailyDash/blob/main/githubResources/projectArchitecture.png?raw=true" height="400"> 
 </div>
+
+<h2>Flow</h2>
+The first thing that happens is the client sends an HTTP request to the server
+The API Gateway intercepts this HTTP Request and interacts with the Identity Provider to authenticate the user
+The Identity provider will authenticate the user and give a JWT token
+The user can now use the services inside the application
+They will then be re-directed to the main page where the main page will interact with each microservice 
+
+
+
 
 
 <h2>Features</h2>
