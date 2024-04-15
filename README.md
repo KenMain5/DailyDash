@@ -42,10 +42,4 @@ DailyDash is an all-in-One Daily Planner which would have the features users wou
 </div>
 
 
-<h2>Lessons</h2>
-<div>
-  <ul>
-    <li>I gained a better understanding of how everything interacts in a microservice architecture application </li>
-     <li>I've also learned a lot about JWT and authentication protocols. 
-</div>
 
